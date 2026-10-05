@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Wanderline | Travel Planner</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;600&family=Cairo:wght@400;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="main.js" defer></script>
+</head>
+<body>
+  <!-- Page-transition curtain (animated by js/main.js) -->
+  <div class="curtain" aria-hidden="true"></div>
+
+  <header class="nav">
+    <a href="#/" class="brand" data-route="home">Wanderline</a>
+    <nav>
+      <a href="#/" data-route="home" data-i18n="nav_home"></a>
+      <a href="#/dashboard" data-route="dashboard" data-i18n="nav_hub"></a>
+      <button class="lang" id="langBtn" type="button" aria-label="Switch language">عربي</button>
+    </nav>
+  </header>
+
+  <!-- ========== VIEW 1: HOMEPAGE ========== -->
+  <main id="home" class="view">
+    <section class="hero">
+      <!-- Placeholder: swap for <video autoplay muted loop playsinline poster="media/hero.jpg"><source src="media/hero.mp4"></video> or an <img> -->
+      <div class="hero__media" data-parallax="0.3"></div>
+      <div class="hero__txt">
+        <h1 data-i18n="h_title"></h1>
+        <p class="lead" data-i18n="h_sub"></p>
+        <a href="#trips" class="btn" data-i18n="h_cta"></a>
+      </div>
+    </section>
+
+    <section class="wrap" id="trips">
+      <h2 data-i18n="f_title"></h2>
+      <div class="filters" id="filters"></div>
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <!-- ========== VIEW 2: TRAVELER'S HUB ========== -->
+  <main id="dashboard" class="view" hidden>
+    <section class="wrap">
+      <h2 data-i18n="nav_hub"></h2>
+      <div class="stats">
+        <div class="stat"><small data-i18n="s_trips"></small><b data-count="3">0</b></div>
+        <div class="stat"><small data-i18n="s_budget"></small><b data-count="4850" data-pre="$">0</b></div>
+        <div class="stat"><small data-i18n="s_pts"></small><b data-count="12480">0</b></div>
+      </div>
+      <div class="grid2">
+        <article class="panel">
+          <h3 data-i18n="d_budget"></h3>
+          <div class="chart" id="chart"></div>
+        </article>
+        <article class="panel">
+          <h3 data-i18n="d_plan"></h3>
+          <div class="tabs" id="tabs"></div>
+          <div class="plan">
+            <ol id="acts"></ol>
+            <div class="map" id="map" role="img" aria-label="Map"></div>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
